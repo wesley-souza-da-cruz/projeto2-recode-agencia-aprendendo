@@ -1,0 +1,2 @@
+Mudei tanto de modelos conceituais, lógicos, sql, que eu já nem sei mais quais foram os ultimos que fiz. Ai têm alguns prints,
+eu fiz vários, e vários, quebrei a cabeça por horas. Mas segue ai alguns exemplos que fiz. 

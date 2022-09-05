@@ -1,0 +1,39 @@
+/* Lógico_agencia1: */
+
+CREATE TABLE Clientes (
+    endereco VARCHAR,
+    fone CHARACTER,
+    nome VARCHAR,
+    cpf VARCHAR PRIMARY KEY
+);
+
+CREATE TABLE Passagem (
+    numero SMALLINT PRIMARY KEY,
+    poltrona SMALLINT,
+    preco REAL,
+    data DATE,
+    fk_Clientes_cpf VARCHAR
+);
+
+CREATE TABLE Aviao_Voo (
+    tipo VARCHAR,
+    capacidade VARCHAR,
+    fabricante CHAR,
+    naviao SMALLINT PRIMARY KEY,
+    fk_Aeroporto_codaerop SMALLINT
+);
+
+CREATE TABLE Aeroporto (
+    nome VARCHAR,
+    localizacao VARCHAR,
+    codaerop SMALLINT PRIMARY KEY
+);
+ 
+ALTER TABLE Passagem ADD CONSTRAINT FK_Passagem_2
+    FOREIGN KEY (fk_Clientes_cpf)
+    REFERENCES Clientes (cpf)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Aviao_Voo ADD CONSTRAINT FK_Aviao_Voo_2
+    FOREIGN KEY (fk_Aeroporto_codaerop)
+    REFERENCES Aeroporto (codaerop);
